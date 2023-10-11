@@ -1,0 +1,96 @@
+.masthead {
+  background-color: var(--darkGrey);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  height: var(--masthead-height);
+  padding-bottom: inc_to_rem(3);
+  position: relative;
+
+  @include mq(tablet) {
+    padding-bottom: inc_to_rem(4);
+  }
+
+  @include mq(desktop) {
+    padding-bottom: inc_to_rem(5);
+  }
+
+  @include mq(desktop-lg) {
+    padding-bottom: inc_to_rem(6);
+  }
+
+  &--has-mask:after { @include mask; }
+
+  .container {
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  &__title {
+    font-size: inc_to_rem(5);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(6);
+    margin-bottom: inc_to_rem(1);
+
+    @include mq(tablet-lg) {
+      font-size: inc_to_rem(6);
+      line-height: inc_to_rem(7);
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(8);
+      line-height: inc_to_rem(9);
+      margin-bottom: inc_to_rem(2);
+    }
+
+    @include mq(desktop-lg) {
+      font-size: inc_to_rem(10);
+      line-height: inc_to_rem(11);
+      margin-bottom: inc_to_rem(2);
+    }
+
+  }
+
+  &__body {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+
+    @include mq(tablet-lg) {
+      font-size: inc_to_rem(3);
+      line-height: inc_to_rem(4);
+    }
+
+    @include mq(desktop) {
+      line-height: inc_to_rem(5);
+    }
+
+    a:not([href^="tel:"]) { @include textLink(var(--white)); }
+
+  }  
+  
+}
+
+
+//== Reservations Page
+
+body.page-template-reservations {
+
+  .masthead {
+
+    @include mq(desktop) {
+      height: 575px;
+    }
+
+    &__body {
+      @include mq(desktop) {
+        max-width: 60%;
+      }
+      @include mq(desktop-lg) {
+        max-width: 800px;
+      }
+    }
+
+  }
+
+}

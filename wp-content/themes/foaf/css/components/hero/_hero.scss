@@ -1,0 +1,241 @@
+.hero {
+  background-color: var(--darkGrey);
+  color: var(--white);
+  display: flex;
+  height: var(--hero-height);
+  padding-top: var(--header-height);
+  position: relative;
+  text-align: center;
+
+  @include mq(desktop) {
+    max-height: var(--hero-max-height);
+  }
+
+  @include mq(desktop-lg) {
+    height: 100vh;
+    max-height: none;
+  }
+
+  .container {    
+    align-items: center;
+    justify-content: center;
+    margin-top: -(inc_to_rem(2));
+    z-index: 2;
+  }
+
+  &__title,
+  &__intro {
+    @include fadeInUpText(0.5s);
+    opacity: 0;
+    position: relative;
+  }
+
+  &__title {
+    font-size: inc_to_rem(5);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+
+    @include mq(tablet) {
+      font-size: inc_to_rem(6);
+      line-height: inc_to_rem(6);
+      margin-bottom: inc_to_rem(2);
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(10);
+      margin-bottom: inc_to_rem(5);
+    }
+
+    @include mq(desktop-lg) {
+      font-size: inc_to_rem(12);
+      margin-bottom: inc_to_rem(7);
+    }
+
+  }
+
+  &__intro {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+
+    @include mq(tablet) {
+      font-size: inc_to_rem(3);
+      line-height: inc_to_rem(5);
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(4);
+      line-height: inc_to_rem(6);
+    }
+
+    @include mq(desktop-md) {
+      font-size: inc_to_rem(4);
+      line-height: inc_to_rem(6);
+    }
+
+    @include mq(desktop-lg) {
+      font-size: inc_to_rem(5);
+      line-height: inc_to_rem(7);
+    }
+
+    br {
+      display: none;
+
+      @include mq(tablet) {
+        display: block;
+      }
+
+    }
+
+  }
+
+  &__btn {
+    animation-delay: 1.25s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-name: fadeInButton;
+    margin-top: inc_to_rem(3);
+    opacity: 0;    
+
+    @include mq(tablet) {
+      font-size: 20px;
+      margin-top: inc_to_rem(4);
+      padding: inc_to_rem(3) inc_to_rem(4);
+    }
+
+    @include mq(desktop-md) {
+      font-size: inc_to_rem(3);
+      padding: inc_to_rem(3) inc_to_rem(4);
+      margin-top: inc_to_rem(5);
+    }
+
+    @include mq(desktop-lg) {
+      margin-top: inc_to_rem(6);
+    }
+
+  }
+
+  .owl-carousel {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .owl-stage-outer,
+    .owl-stage,
+    .owl-item { height: 100%; }
+
+    .owl-item {
+
+      &:after { @include mask; }
+
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+  }
+  
+}
+
+@keyframes fadeInButton {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+
+//== Mouse Scroll
+
+.mouse_scroll {
+	bottom: 20px;
+  display: none;
+	height: 100px;	
+  left: 50%;
+  margin: 0 auto;	
+  position: absolute;
+  transform: translateX(-50%);
+  width: 24px;
+  z-index: 1;
+
+  @include mq(desktop-lg) {
+    display: block;
+  }
+
+  .mouse__arrow {
+    animation: mouse-scroll 1s infinite;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    display: block;
+    margin: 0 0 3px 4px;
+    height: 16px;
+    transform: rotate(45deg);
+    width: 16px;
+
+    &--first {
+      animation-delay: .1s;
+      animation-direction: alternate;
+      animation-delay: alternate;
+      margin-top: 1px;
+    }
+
+    &--second {
+      animation-delay: .2s;
+      animation-direction: alternate;  
+      margin-top: -6px;
+    }
+
+    &--third {
+      animation-delay: .3s;
+      animation-direction: alternate;
+      margin-top: -6px;
+    }
+
+  }
+
+  .mouse {
+    border: 2px solid white;
+    border-radius: 14px;
+    height: 42px;
+    top: 170px;
+    transform: none;    
+    width: 24px;
+  
+    &__wheel {
+      animation: mouse-wheel 0.6s linear infinite;
+      background: white;
+      border: 2px solid #fff;
+      border-radius: 8px;  
+      display: block;
+      height: 4px;    
+      margin: 5px auto;  
+      position: relative;  
+      width: 4px;          
+    }
+  
+  }
+
+}
+
+@keyframes mouse-wheel {
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+
+@keyframes mouse-scroll {
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}

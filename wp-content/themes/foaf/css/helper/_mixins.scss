@@ -1,0 +1,151 @@
+
+//== Responsive Breakpoints
+
+$breakpoints: (mobile-lg: 375px,
+    mobile-xlg: 414px,
+    tablet: 768px,
+    tablet-lg: 992px,
+    desktop: 1366px,
+    desktop-md: 1441px,
+    desktop-lg: 1920px,
+    full: 2560px);
+
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+    }
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin laptop-mq() {
+    @media only screen and (min-width: 1366px) and (max-height: 1024px) {
+        @content;
+    }
+}
+
+
+//== Text Link Formatting
+
+@mixin textLink($colour: var(--text-link-colour)) {
+    border-bottom: 2px solid $colour;
+    color: $colour;
+    font-weight: var(--font-bold);
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+    
+    &:hover {
+        color: var(--text-link-hover-colour);
+    }
+}
+
+
+//== Image mask
+
+@mixin mask($bg: rgba(0,0,0,.5)) {
+    background: $bg;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+//== Small Panel
+
+@mixin smallPanel($hasPadding: true ) {
+    background: var(--panel-bg);
+    border-radius: var(--border-radius);
+    color: var(--font-colour);
+    box-shadow: var(--panel-box-shadow);
+    overflow: hidden;
+
+    @if $hasPadding {
+        padding: var(--panel-padding);
+    }
+
+}
+
+
+//== Unit to px
+
+$base-unit: 9;
+@function inc_to_rem($increment) {
+    @return 0rem + ($increment * $base-unit) / 10;
+}
+
+
+
+//== Block Title
+
+@mixin blockTitle() {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+
+    @include mq(tablet-lg) {
+      font-size: inc_to_rem(5);
+      margin-bottom: inc_to_rem(3);
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(7);
+      margin-bottom: inc_to_rem(4);
+    }
+}
+
+//== Block Intro
+
+@mixin blockIntro() {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+    margin: 0 auto inc_to_rem(4);
+    
+    @include mq(tablet) {
+        line-height: inc_to_rem(4);
+        margin-bottom: inc_to_rem(4);
+    }
+
+    @include mq(tablet-lg) {
+        max-width: 800px;
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(3);
+      line-height: inc_to_rem(5);
+      margin-bottom: inc_to_rem(6);
+      max-width: 970px;
+    }
+
+    a:not([href^="tel:"]) { @include textLink; }
+    
+}
+
+
+//== Fade In Text
+
+@mixin fadeInUpText($delay: 0) {
+    animation-delay: $delay;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-name: fadeInUpText;
+
+    @keyframes fadeInUpText {
+        from {
+            opacity: 0;
+            bottom: -30px;
+        }
+        to {
+            opacity: 1;
+            bottom: 0;
+        }
+      }
+
+}
