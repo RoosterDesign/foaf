@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <div class="container">
     <div class="site-footer__col site-footer__col--first">
-      <a href="/" title="Harringtons on the Hill" class="site-footer__logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Harringtons on the Hill" class="img-responsive" width="250" height="52" />
+      <a href="/" title="Friends of Abbey Fields" class="site-footer__logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Friends of Abbey Fields" class="img-responsive" width="250" height="52" />
       </a>
       <p><?php echo get_option('footer_text'); ?></p>
       <ul class="footer-social">
@@ -35,7 +35,7 @@
       </p>
       <p>
         <strong>Email</strong>
-        <a href="mailto:<?php echo get_option('email_address'); ?>?subject=Website Enquiry" target="_blank" title="Email Harringtons on the Hill"><?php echo get_option('email_address'); ?></a>
+        <a href="mailto:<?php echo get_option('email_address'); ?>?subject=Website Enquiry" target="_blank" title="Email Friends of Abbey Fields"><?php echo get_option('email_address'); ?></a>
       </p>
       <p>
         <strong>Address</strong>
@@ -65,7 +65,7 @@
       </p>
     </div>
     <div class="site-footer-bottom">
-      <p>&copy<?php echo date("Y"); ?> Harringtons on the Hill</p>
+      <p>&copy<?php echo date("Y"); ?> Friends of Abbey Fields</p>
       <?php wp_nav_menu( array( 'menu' => 'footer-menu', 'menu_class' => 'site-footer-bottom-links', 'container' => 'ul', )); ?>      
       <p><?php echo get_option('site_creator'); ?></p>
     </div>

@@ -85,6 +85,7 @@ $base-unit: 9;
 //== Block Title
 
 @mixin blockTitle() {
+    font-family: var(--heading-font);
     font-size: inc_to_rem(4);
     font-weight: var(--font-bold);
     line-height: inc_to_rem(5);
@@ -96,7 +97,7 @@ $base-unit: 9;
     }
 
     @include mq(desktop) {
-      font-size: inc_to_rem(7);
+      font-size: inc_to_rem(6);
       margin-bottom: inc_to_rem(4);
     }
 }

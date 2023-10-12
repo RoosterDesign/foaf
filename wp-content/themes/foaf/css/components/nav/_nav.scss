@@ -24,8 +24,8 @@
   @include mq(tablet-lg) {
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
     margin-top: inc_to_rem(1);
+    right: auto;
     width: 100%;
   }
 
@@ -181,10 +181,8 @@
     }
 
     &:after {
-      // animation-name: fadeNavOut;
-      // animation-duration: .3s;
       background: var(--nav-link-colour);
-      border-radius: 2px;
+      border-radius: 1px;
       content: '';
       height: 3px;
       bottom: 10px;
@@ -217,14 +215,6 @@
       @include mq(tablet-lg) {
         opacity: 1;
       }
-
-      // &:after {
-      //   @include mq(tablet-lg) {
-      //     animation-name: fadeNavIn;
-      //     animation-duration: .3s;
-      //     animation-fill-mode: forwards;
-      //   }
-      // }
 
     }
 

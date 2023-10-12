@@ -56,6 +56,20 @@
 
   }
 
+  &__donate {
+    align-self: stretch;
+    margin: auto var(--nav-padding) var(--nav-padding);
+
+    @include mq(tablet-lg) {
+      margin: 0 0 0 auto;
+    }
+
+    @include mq(desktop) {
+      margin: 0;
+    }
+
+  }
+
 }
 
 @keyframes slideInNav {

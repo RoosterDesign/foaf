@@ -17,7 +17,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 @import './vendor/normalize';
-@import './fonts/_fonts';
 @import './vendor/_owl-carousel';
 @import './helper/_mixins';
 @import './components/button/_button';
@@ -27,7 +26,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/hero/_hero';
 @import './components/reviews-panel/_reviews-panel';
 @import './components/reservation-panel/_reservation-panel';
-@import './components/offers-panel/_offers-panel';
+@import './components/card-panel/_card-panel';
 @import './components/menu-panel/_menu-panel';
 @import './components/gallery/_gallery';
 @import './components/functions-panel/_functions-panel';
@@ -44,27 +43,40 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/map/_map';
 @import './components/page-content/_page-content';
 
-
 :root {
   
   //== Colours
+
+--dark-moss-green: #606c38ff;
+--pakistan-green: #283618ff;
+--cornsilk: #fefae0ff;
+--earth-yellow: #dda15eff;
+--tigers-eye: #bc6c25ff;
+
   --white: #fff;
   // --darkGrey: #1e1e1e;
-  --darkGrey: #161616;
+  --darkGrey: #0c0c0c;
   --lightGrey: #FAFAFA;
-  --green: #6B7963;
+  
+  --accent: #2a8d58;
+
   --rating-green: #00AA6C;
 
 
   //== General
   --unit: 9px;
   --body-bg: var(--lightGrey);
-  --border-radius: 4px;
+  --border-radius: 2px;
   --max-content-width-tablet: 992px;
   
+
+// font-family: 'Mulish', sans-serif;
+// font-family: 'Outfit', sans-serif;
+// font-family: 'Poppins', sans-serif;
   
   //== Type
-  --font: 'Jost', sans-serif;
+  --font: 'Outfit', sans-serif;
+  --heading-font: 'Young Serif', serif;
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
@@ -72,13 +84,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --font-bold: 700;
   --font-colour: var(--darkGrey);
   --text-link-colour: var(--darkGrey);
-  --text-link-hover-colour: var(--green);
+  --text-link-hover-colour: var(--accent);
   --sub-title-font-size: 22px;
   --sub-title-line-height: 36px;
 
 
   //== Buttons
-  --btn-primary-bg: var(--green);
+  --btn-primary-bg: var(--accent);
   --btn-primary-colour: var(--white);
   --btn-secondary-border: 2px solid var(--white);
   --btn-secondary-colour: var(--white);
@@ -109,15 +121,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --footer-bg: var(--darkGrey);
   --footer-colour: var(--white);
   --footer-link-colour: var(--white);
-  --footer-link-hover-colour: var(--green);
+  --footer-link-hover-colour: var(--accent);
   --footer-hr-colour: var(--white);
   --footer-col-width: 360px;
 
 
   //== Panels
   --panel-bg: var(--white);
-  --panel-box-shadow: 0 10px 30px rgba(0,0,0,.06);
-  --panel-box-shadow-hover: 0 15px 35px rgba(0,0,0,0.5);
+  --panel-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  --panel-box-shadow-hover: 0 15px 30px rgba(0,0,0,0.4);
   --panel-padding: calc(9px * 4) calc(9px * 3);
   
 
@@ -127,7 +139,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
   //== Hero
   --hero-height: 500px;
-  --hero-max-height: 1000px;
 
 
   //== Contact
@@ -152,7 +163,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @include mq(tablet) {
   :root {
     --nav-padding: 60px;
-    --hero-height: 650px;
     --block-padding: calc(9px * 7);
     --form-input-height: 60px;
     --form-textarea-height: 150px;
@@ -167,6 +177,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --header-height: 140px;
     --header-padding: 40px;
     --max-content-width: 1200px;
+    --hero-height: 600px;
     --block-padding: calc(9px * 8);
     --masthead-height: 350px;
   }
@@ -179,7 +190,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   :root {
     --header-height: 150px;
     --max-content-width: 1412px;
-    --hero-height: 50vw;
+    --hero-height: 800px;
     --panel-padding: calc(9px * 5) calc(9px * 4);
     --block-padding: calc(9px * 12);
     --masthead-height: 400px;
@@ -191,6 +202,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @include mq(desktop-md) {
   :root {
+    --hero-height: 1000px;
     --block-padding: calc(12px * 12);
     --panel-padding: calc(9px * 6) calc(9px * 5);
     --masthead-height: 500px;

@@ -1,19 +1,23 @@
-.offers-panel {
+.card-panel {
   padding: var(--block-padding) 0;
 
   &__title {
     @include blockTitle;
     text-align: center;
+
+    @include mq(tablet) {
+      text-align: left;
+    }
+
   }
 
   &__body {
     @include blockIntro;
-    text-align: center;
   }
 
 }
 
-.offers {  
+.card-list {  
   margin-bottom: inc_to_rem(4);
 
   @include mq(tablet-lg) {
@@ -34,25 +38,19 @@
 
 }
 
-.offers-panel__title + .offers {
+.card-panel__title + .card-list {
   margin-top: inc_to_rem(2);
-
-  @include mq(tablet-lg) {
-    margin-top: inc_to_rem(4);
-  }
-
-  @include mq(desktop) {
-    margin-top: inc_to_rem(6);
-  }
-
 }
 
-.offer {
+.card {
   @include smallPanel(false);
+  display: flex;
+  flex-direction: column;
   margin-bottom: inc_to_rem(2);
+  text-decoration: none;
+  transition: all .1s ease-in-out;
 
   @include mq(tablet) {
-    display: flex;
     flex-direction: row;
   }
 
@@ -60,10 +58,22 @@
     flex-direction: column;
     margin: 0;
   }
+
+  &:hover {
+    background: var(--accent);
+    box-shadow: var(--panel-box-shadow-hover);
+    color: var(--white);
+  
+    .card__img img {
+      transform: scale(1.05);
+    }
+
+  }
   
   &:last-child { margin-bottom: 0; }
 
   &__img {
+    overflow: hidden;
 
     @include mq(tablet) {
       width: 250px;
@@ -76,6 +86,7 @@
     img {
       height: 100%;
       object-fit: cover;
+      transition: all .2s ease-in-out;
       width: 100%;
     }
 
@@ -87,6 +98,7 @@
   }
 
   &__title {
+    font-family: var(--heading-font);
     font-size: inc_to_rem(3);
     font-weight: var(--font-bold);
     line-height: inc_to_rem(4);

@@ -11,7 +11,7 @@
 
   <picture class="gallery__img">
     <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)" >
-    <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+    <img src="<?php echo $mobileImage; ?>" alt="Friends of Abbey Fields" />
   </picture> 
 
   <?php endif; $image = null; ?>
@@ -27,7 +27,7 @@
 
   <picture class="gallery__img">
     <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)" >
-    <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+    <img src="<?php echo $mobileImage; ?>" alt="Friends of Abbey Fields" />
   </picture> 
 
   <?php endif; $image = null; ?>
@@ -43,7 +43,7 @@
 
   <picture class="gallery__img">
     <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)" >
-    <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+    <img src="<?php echo $mobileImage; ?>" alt="Friends of Abbey Fields" />
   </picture>
 
   <?php endif; $image = null; ?>
@@ -59,7 +59,7 @@
 
   <picture class="gallery__img">
     <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)" >
-    <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+    <img src="<?php echo $mobileImage; ?>" alt="Friends of Abbey Fields" />
   </picture>
 
   <?php endif; $image = null; ?>

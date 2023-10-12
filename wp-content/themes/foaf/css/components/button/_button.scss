@@ -3,7 +3,7 @@
   border-radius: var(--border-radius);
   display: flex;
   font-size: inc_to_rem(2);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-bold);
   justify-content: center;
   text-decoration: none;
   transition: all .2s ease-in-out;  
@@ -19,21 +19,23 @@
     padding: inc_to_rem(2) inc_to_rem(3);
 
     @include mq(tablet-lg) {
-      padding: 20px 30px;
+      // padding: 20px 30px;
+      padding: 15px 20px;
     }
 
     @include mq(desktop) {
-      padding: 25px 40px;
+      // padding: 25px 50px;
+      padding: inc_to_rem(2) inc_to_rem(5);
     }
 
     &:hover {
       box-shadow: 0 8px 10px rgba(0,0,0,0.25);
-      background: lighten(#6B7963, 5%);
+      background: lighten(#2a8d58, 5%);
     }
 
     &:active {
       box-shadow: none;
-      background: darken(#6B7963, 5%);
+      background: lighten(#2a8d58, 5%);
     }
 
   }
@@ -51,15 +53,15 @@
   }
 
   &--small {
-    font-size: inc_to_rem(2);
+    font-size: 16px;
     padding: inc_to_rem(2) inc_to_rem(3);
 
     @include mq(tablet-lg) {
-      padding: 15px 20px;
+      padding: 15px 25px;
     }
 
     @include mq(desktop) {
-      padding: inc_to_rem(2) inc_to_rem(3);
+      // padding: inc_to_rem(2) inc_to_rem(3);
     }
 
   }

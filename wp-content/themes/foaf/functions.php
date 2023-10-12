@@ -24,15 +24,15 @@ register_nav_menus(
 
 
 //== Enqueue scripts and styles.
- 
+
 function foaf_scripts() {
   	
 	//== Google Fonts
-	//  wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap', false );
-	
+	wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&family=Mulish:wght@400;700&family=Outfit:wght@400;700&family=Poppins:wght@400;700&family=Signika:wght@400;700&family=Young+Serif&display=swap', array(), null );
+
 
 	//== jQuery
-	// wp_enqueue_script( 'foaf-jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'foaf-jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), _S_VERSION, true );
 
 
 	//== Waypoints
@@ -70,8 +70,7 @@ function wpf_dev_disable_scroll_effect_on_all_forms( $forms ) {
 					wpforms.scrollToError = function(){};
 					wpforms.animateScrollTop = function(){};
 					</script>
-					<?php
-					
+					<?php					
 	}
 }
 add_action( 'wpforms_wp_footer_end', 'wpf_dev_disable_scroll_effect_on_all_forms', 10, 1 );
@@ -83,99 +82,57 @@ add_action( 'wpforms_wp_footer_end', 'wpf_dev_disable_scroll_effect_on_all_forms
 
 function create_posttype() {
   	
-	register_post_type( 'reviews',
+	register_post_type(
+		'activities',
 			array(
 					'labels' => array(
-							'name' => __( 'Reviews' ),
-							'singular_name' => __( 'Review' )
+							'name' => __( 'Activities' ),
+							'singular_name' => __( 'Activity' )
 					),
 					'public' => true,
 					'has_archive' => false,
-					'rewrite' => array('slug' => 'reviews'),
+					'rewrite' => array('slug' => 'activities'),
 					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-star-filled',
+					'menu_icon'   => 'dashicons-calendar',
 					'menu_position' => 6
-
 			)
 	);
+	register_taxonomy('activities_category', 'activities', array('hierarchical' => true, 'label' => 'Categories', 'query_var' => true, 'rewrite' => true));
 
-	register_post_type( 'content-blocks',
+
+	register_post_type(
+		'news',
 			array(
 					'labels' => array(
-							'name' => __( 'Content Blocks' ),
-							'singular_name' => __( 'Content Block' )
+							'name' => __( 'News' ),
+							'singular_name' => __( 'News' )
 					),
 					'public' => true,
 					'has_archive' => false,
-					'rewrite' => array('slug' => 'content-blocks'),
+					'rewrite' => array('slug' => 'news'),
 					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-align-center',
-					'menu_position' => 5
-
+					'menu_icon'   => 'dashicons-calendar',
+					'menu_position' => 6
 			)
 	);
 
-	register_post_type( 'offers',
-			array(
-					'labels' => array(
-							'name' => __( 'Offers' ),
-							'singular_name' => __( 'Offer' )
-					),
-					'public' => true,
-					'has_archive' => false,
-					'rewrite' => array('slug' => 'offers'),
-					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-awards',
-					'menu_position' => 9
 
-			)
-	);
 
-	register_post_type( 'home-hero-slides',
-			array(
-					'labels' => array(
-							'name' => __( 'Home Hero Slides' ),
-							'singular_name' => __( 'Home Hero Slide' )
-					),
-					'public' => true,
-					'has_archive' => false,
-					'rewrite' => array('slug' => 'home-hero-slides'),
-					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-slides',
-					'menu_position' => 4
-
-			)
-	);
-
-	register_post_type( 'menus',
-			array(
-					'labels' => array(
-							'name' => __( 'Menus' ),
-							'singular_name' => __( 'Menu' )
-					),
-					'public' => true,
-					'has_archive' => false,
-					'rewrite' => array('slug' => 'menus'),
-					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-book',
-					'menu_position' => 7
-			)
-	);
-
-	register_post_type( 'function-menus',
-			array(
-					'labels' => array(
-							'name' => __( 'Function Menus' ),
-							'singular_name' => __( 'Function Menu' )
-					),
-					'public' => true,
-					'has_archive' => false,
-					'rewrite' => array('slug' => 'function-menus'),
-					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-book',
-					'menu_position' => 8
-			)
-	);
+	// register_post_type(
+	// 	'content-blocks',
+	// 		array(
+	// 				'labels' => array(
+	// 						'name' => __( 'Content Blocks' ),
+	// 						'singular_name' => __( 'Content Block' )
+	// 				),
+	// 				'public' => true,
+	// 				'has_archive' => false,
+	// 				'rewrite' => array('slug' => 'content-blocks'),
+	// 				'show_in_rest' => true,
+	// 				'menu_icon'   => 'dashicons-align-center',
+	// 				'menu_position' => 5
+	// 		)
+	// );
 
 }
 
@@ -208,7 +165,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_image_size( 'fw-img-tablet', 1024, 1024, true );
 	add_image_size( 'fw-img-desktop', 1920, 1920, true );
 	add_image_size( 'fw-img-desktop-lg', 2560, 2560, true );
-	add_image_size( 'offer', 480, 330, true );
+	add_image_size( 'card', 480, 330, true );
 }
 
 
