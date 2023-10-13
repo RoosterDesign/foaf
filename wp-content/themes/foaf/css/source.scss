@@ -44,23 +44,25 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/page-content/_page-content';
 
 :root {
-  
+    
   //== Colours
 
---dark-moss-green: #606c38ff;
---pakistan-green: #283618ff;
---cornsilk: #fefae0ff;
---earth-yellow: #dda15eff;
---tigers-eye: #bc6c25ff;
+  --foaf-green: rgb(94,126,57);
+  --foaf-brown: rgb(65,45,35);
+
+  --dark-moss-green: #606c38ff;
+  --pakistan-green: #283618ff;
+  --cornsilk: #fefae0ff;
+  --earth-yellow: #dda15eff;
+  --tigers-eye: #bc6c25ff;
 
   --white: #fff;
   // --darkGrey: #1e1e1e;
   --darkGrey: #0c0c0c;
   --lightGrey: #FAFAFA;
-  
-  --accent: #2a8d58;
 
-  --rating-green: #00AA6C;
+  --accent: var(--foaf-green);
+  --title-colour: var(--foaf-brown);
 
 
   //== General
@@ -68,11 +70,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --body-bg: var(--lightGrey);
   --border-radius: 2px;
   --max-content-width-tablet: 992px;
-  
 
-// font-family: 'Mulish', sans-serif;
-// font-family: 'Outfit', sans-serif;
-// font-family: 'Poppins', sans-serif;
+
+  // font-family: 'Mulish', sans-serif;
+  // font-family: 'Outfit', sans-serif;
+  // font-family: 'Poppins', sans-serif;
   
   //== Type
   --font: 'Outfit', sans-serif;
@@ -99,7 +101,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Header  
-  --header-bg: var(--darkGrey);
+  --header-bg: var(--foaf-brown);
   --header-height: 80px;
   --header-padding: 20px;  
 
@@ -109,7 +111,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Nav
-  --mobile-nav-bg: var(--darkGrey);
+  --mobile-nav-bg: var(--foaf-brown);
   --nav-link-colour: var(--white);
   --mobile-nav-colour: var(--white);
   --mobile-close-colour: var(--white);
@@ -118,7 +120,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Footer
-  --footer-bg: var(--darkGrey);
+  --footer-bg: var(--foaf-brown);
   --footer-colour: var(--white);
   --footer-link-colour: var(--white);
   --footer-link-hover-colour: var(--accent);
@@ -202,7 +204,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @include mq(desktop-md) {
   :root {
-    --hero-height: 1000px;
+    --hero-height: 900px;
     --block-padding: calc(12px * 12);
     --panel-padding: calc(9px * 6) calc(9px * 5);
     --masthead-height: 500px;

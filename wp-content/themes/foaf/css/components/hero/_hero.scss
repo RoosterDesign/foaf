@@ -14,10 +14,11 @@
   }
 
   &:after {
-    background: rgba(0, 0, 0, 0.35);
+    background: var(--foaf-brown);
     content: '';
     height: 100%;
     left: 0;
+    opacity: .65;
     position: absolute;
     top: 0;
     width: 100%;

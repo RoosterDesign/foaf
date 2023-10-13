@@ -1,6 +1,4 @@
 .about-panel {
-  // max-width: 2560px;
-  // margin: 0 auto;
   position: relative;
 
   @include mq(desktop-md) {
@@ -24,7 +22,7 @@
     }
 
     &.about-panel__subHead {
-      font-weight: var(--font-semi-bold);
+      font-family: var(--heading-font);
 
       @include mq(tablet) {
         font-size: inc_to_rem(3);
@@ -68,11 +66,9 @@
     background-position: 50% 0;
     background-repeat: no-repeat;
     background-size: cover;
-    // width: 50%;
     width: 100%;
 
-    @include mq(tablet-lg) {
-      // background-position: 50% 50%;      
+    @include mq(tablet-lg) { 
       top: 0;
       width: 50%;
     }
@@ -117,5 +113,3 @@
   }
 
 }
-
-// 

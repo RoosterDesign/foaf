@@ -313,28 +313,12 @@ function awesome_page_create() {
 			$facebook_link = get_option('facebook_link', '');
 
 
-			//== Twitter Social Link
-			if (isset($_POST['twitter_link'])) {
-					$twitter_link = $_POST['twitter_link'];
-					update_option('twitter_link', $twitter_link);
-			}
-			$twitter_link = get_option('twitter_link', '');
-
-
 			//== Instagram Link
 			if (isset($_POST['instagram_link'])) {
 				$instagram_link = $_POST['instagram_link'];
 				update_option('instagram_link', $instagram_link);
 			}
 			$instagram_link = get_option('instagram_link', '');
-
-
-			//== Trip Advisor Link
-			if (isset($_POST['trip_advisor_link'])) {
-				$trip_advisor_link = $_POST['trip_advisor_link'];
-				update_option('trip_advisor_link', $trip_advisor_link);
-			}
-			$trip_advisor_link = get_option('trip_advisor_link', '');
 
 
 			//== Footer
@@ -349,31 +333,6 @@ function awesome_page_create() {
 				update_option('site_creator', $site_creator);
 			}
 			$site_creator = get_option('site_creator', '');
-
-
-			//== Resdiary Embed
-			if (isset($_POST['resdiary_embed'])) {
-				$resdiary_embed = stripslashes($_POST['resdiary_embed']);
-				update_option('resdiary_embed', $resdiary_embed);
-			}
-			$resdiary_embed = get_option('resdiary_embed', '');
-
-
-			//== Resdiary Scripts
-			if (isset($_POST['resdiary_scripts'])) {
-				$resdiary_scripts = stripslashes($_POST['resdiary_scripts']);
-				update_option('resdiary_scripts', $resdiary_scripts);
-			}
-			$resdiary_scripts = get_option('resdiary_scripts', '');
-
-
-			//== Fallback Text - Offers
-			if (isset($_POST['no_offers_text'])) {
-				$no_offers_text = stripslashes($_POST['no_offers_text']);
-				update_option('no_offers_text', $no_offers_text);
-			}
-			$no_offers_text = get_option('no_offers_text', '');
-
 
 			//== Fallback Masthead Image
 			if (isset($_POST['masthead_fallback_image'])) {
@@ -419,70 +378,16 @@ function awesome_page_create() {
 
 					<hr />
 
-					<h2>Opening Hours</h2>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_1_label">Opening Hours 1 label</label><br>
-						<input type="text" name="opening_hours_1_label" id="opening_hours_1_label" value="<?php echo $opening_hours_1_label; ?>">
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_1_data">Opening Hours 1 hours</label><br>
-						<textarea name="opening_hours_1_data" id="opening_hours_1_data"><?php echo $opening_hours_1_data; ?></textarea>
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_2_label">Opening Hours 2 label</label><br>
-						<input type="text" name="opening_hours_2_label" id="opening_hours_2_label" value="<?php echo $opening_hours_2_label; ?>">
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_2_data">Opening Hours 2 hours</label><br>
-						<textarea name="opening_hours_2_data" id="opening_hours_2_data"><?php echo $opening_hours_2_data; ?></textarea>
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_3_label">Opening Hours 3 label</label><br>
-						<input type="text" name="opening_hours_3_label" id="opening_hours_3_label" value="<?php echo $opening_hours_3_label; ?>">
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_3_data">Opening Hours 3 hours</label><br>
-						<textarea name="opening_hours_3_data" id="opening_hours_3_data"><?php echo $opening_hours_3_data; ?></textarea>
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_4_label">Opening Hours 4 label</label><br>
-						<input type="text" name="opening_hours_4_label" id="opening_hours_4_label" value="<?php echo $opening_hours_4_label; ?>">
-					</div>
-
-					<div class="settingsGroup">
-						<label for="opening_hours_4_data">Opening Hours 4 hours</label><br>
-						<textarea name="opening_hours_4_data" id="opening_hours_4_data"><?php echo $opening_hours_4_data; ?></textarea>
-					</div>
-
-					<hr />
-
 					<h2>Social</h2>
 
 					<div class="settingsGroup">
 						<label for="facebook_link">Facebook Link</label><br>
 						<input type="text" name="facebook_link" id="facebook_link" value="<?php echo $facebook_link; ?>">
-					</div>					
-
-					<div class="settingsGroup">
-						<label for="twitter_link">Twitter Link</label><br>
-						<input type="text" name="twitter_link" id="twitter_link" value="<?php echo $twitter_link; ?>">
-					</div>					
+					</div>							
 
 					<div class="settingsGroup">
 						<label for="instagram_link">Instagram Link</label><br>
 						<input type="text" name="instagram_link" id="instagram_link" value="<?php echo $instagram_link; ?>">
-					</div>
-
-					<div class="settingsGroup">
-						<label for="trip_advisor_link">Trip Advisor Link</label><br>
-						<input type="text" name="trip_advisor_link" id="trip_advisor_link" value="<?php echo $trip_advisor_link; ?>">
 					</div>
 
 					<hr />
@@ -490,36 +395,8 @@ function awesome_page_create() {
 					<h2>Footer</h2>
 
 					<div class="settingsGroup">
-						<label for="footer_text">Footer Intro Text</label><br>
-						<textarea name="footer_text" id="footer_text"><?php echo $footer_text; ?></textarea>
-					</div>	
-
-					<div class="settingsGroup">
 						<label for="site_creator">Site Creator</label><br>
 						<textarea name="site_creator" id="site_creator"><?php echo $site_creator; ?></textarea>
-					</div>
-
-					<hr />
-
-					<h2>Resdiary Embed</h2>
-
-					<div class="settingsGroup">
-						<label for="resdiary_embed">Resdiary Embed</label><br>
-						<textarea name="resdiary_embed" id="resdiary_embed"><?php echo $resdiary_embed; ?></textarea>
-					</div>
-
-					<div class="settingsGroup">
-						<label for="resdiary_scripts">Resdiary Scripts</label><br>
-						<textarea name="resdiary_scripts" id="resdiary_scripts"><?php echo $resdiary_scripts; ?></textarea>
-					</div>
-
-					<hr />
-
-					<h2>Fallback Text</h2>
-
-					<div class="settingsGroup">
-						<label for="no_offers_text">No Offers Text</label><br>
-						<textarea name="no_offers_text" id="no_offers_text"><?php echo $no_offers_text; ?></textarea>
 					</div>
 
 					<hr />
