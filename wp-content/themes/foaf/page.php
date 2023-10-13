@@ -6,6 +6,5 @@
       <?php the_content(); ?>
     </div>
   </div>
-  <?php include get_theme_file_path("templates/partials/reservations-panel.php"); ?>    
 </div>
 <?php get_footer(); ?>

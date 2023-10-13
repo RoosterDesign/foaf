@@ -62,7 +62,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --lightGrey: #FAFAFA;
 
   --accent: var(--foaf-green);
-  --title-colour: var(--foaf-brown);
+  --heading-colour: var(--foaf-brown);
 
 
   //== General
@@ -207,7 +207,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --hero-height: 900px;
     --block-padding: calc(12px * 12);
     --panel-padding: calc(9px * 6) calc(9px * 5);
-    --masthead-height: 500px;
+    --masthead-height: 450px;
   }
 }
 
@@ -219,7 +219,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --max-content-width: 1600px;
     --header-padding: 60px; 
     --footer-col-width: 400px;
-    --masthead-height: 600px;
   }
 }
 

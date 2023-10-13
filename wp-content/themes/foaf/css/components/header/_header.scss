@@ -1,6 +1,6 @@
 .site-header {
   align-items: center;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  
   display: flex;
   justify-content: space-between;
   height: var(--header-height);
@@ -15,6 +15,7 @@
 
   @include mq(tablet) {
     background: var(--header-bg);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   }
 
   @include mq(tablet-lg) {

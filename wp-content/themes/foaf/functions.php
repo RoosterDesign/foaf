@@ -161,12 +161,15 @@ add_filter( 'intermediate_image_sizes_advanced', 'remove_default_image_sizes' );
 add_theme_support( 'post-thumbnails' );
 	
 if ( function_exists( 'add_theme_support' ) ) {	
+	
 	add_image_size( 'fw-img-mobile', 600, 600, true );
 	add_image_size( 'fw-img-tablet', 1024, 1024, true );
 	add_image_size( 'fw-img-desktop', 1920, 1920, true );
 	add_image_size( 'fw-img-desktop-lg', 2560, 2560, true );
+	add_image_size( 'featured-post', 1600, 9999, true );
 	add_image_size( 'card', 480, 330, true );
 }
+
 
 
 

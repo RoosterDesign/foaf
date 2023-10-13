@@ -769,8 +769,6 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -792,6 +790,8 @@ template {
 @media (min-width: 768px) {
   .site-header {
     background: var(--header-bg);
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -2129,7 +2129,7 @@ body.home .site-header {
 }
 
 .reservation-panel--has-mask:after {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(65, 45, 35, 0.65);
   content: '';
   height: 100%;
   left: 0;
@@ -2200,7 +2200,7 @@ body.home .site-header {
 }
 
 .reservation-panel__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 3.6rem;
   font-weight: var(--font-bold);
@@ -2266,7 +2266,7 @@ body.home .site-header {
 }
 
 .card-panel__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 3.6rem;
   font-weight: var(--font-bold);
@@ -2458,7 +2458,7 @@ body.home .site-header {
 }
 
 .card__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 2.7rem;
   font-weight: var(--font-bold);
@@ -2522,7 +2522,7 @@ body.home .site-header {
 }
 
 .menu-panel--has-mask:after {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(65, 45, 35, 0.65);
   content: '';
   height: 100%;
   left: 0;
@@ -2560,7 +2560,7 @@ body.home .site-header {
 }
 
 .menu-panel__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 3.6rem;
   font-weight: var(--font-bold);
@@ -2658,7 +2658,7 @@ body.home .site-header {
 }
 
 .functions-panel__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 3.6rem;
   font-weight: var(--font-bold);
@@ -2831,7 +2831,7 @@ body.home .site-header {
 }
 
 .instagram-panel__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 3.6rem;
   font-weight: var(--font-bold);
@@ -2957,20 +2957,8 @@ body.home .site-header {
   }
 }
 
-@media (min-width: 1366px) {
-  .masthead {
-    padding-bottom: 4.5rem;
-  }
-}
-
-@media (min-width: 1920px) {
-  .masthead {
-    padding-bottom: 5.4rem;
-  }
-}
-
-.masthead--has-mask:after {
-  background: rgba(0, 0, 0, 0.5);
+.masthead:after {
+  background: rgba(65, 45, 35, 0.65);
   content: '';
   height: 100%;
   left: 0;
@@ -2987,10 +2975,10 @@ body.home .site-header {
 }
 
 .masthead__title {
+  font-family: var(--heading-font);
   font-size: 4.5rem;
   font-weight: var(--font-bold);
   line-height: 5.4rem;
-  margin-bottom: 0.9rem;
 }
 
 @media (min-width: 992px) {
@@ -3004,15 +2992,13 @@ body.home .site-header {
   .masthead__title {
     font-size: 7.2rem;
     line-height: 8.1rem;
-    margin-bottom: 1.8rem;
   }
 }
 
 @media (min-width: 1920px) {
   .masthead__title {
-    font-size: 9rem;
-    line-height: 9.9rem;
-    margin-bottom: 1.8rem;
+    font-size: 8.1rem;
+    line-height: 9rem;
   }
 }
 
@@ -3602,7 +3588,7 @@ body.home .site-header {
 }
 
 .function-menus__title {
-  color: var(--title-colour);
+  color: var(--heading-colour);
   font-family: var(--heading-font);
   font-size: 3.6rem;
   font-weight: var(--font-bold);
@@ -4046,7 +4032,7 @@ body.page-template-contact div.wpforms-container-full .wpforms-confirmation-cont
   --darkGrey: #0c0c0c;
   --lightGrey: #FAFAFA;
   --accent: var(--foaf-green);
-  --title-colour: var(--foaf-brown);
+  --heading-colour: var(--foaf-brown);
   --unit: 9px;
   --body-bg: var(--lightGrey);
   --border-radius: 2px;
@@ -4138,7 +4124,7 @@ body.page-template-contact div.wpforms-container-full .wpforms-confirmation-cont
     --hero-height: 900px;
     --block-padding: calc(12px * 12);
     --panel-padding: calc(9px * 6) calc(9px * 5);
-    --masthead-height: 500px;
+    --masthead-height: 450px;
   }
 }
 
@@ -4147,7 +4133,6 @@ body.page-template-contact div.wpforms-container-full .wpforms-confirmation-cont
     --max-content-width: 1600px;
     --header-padding: 60px;
     --footer-col-width: 400px;
-    --masthead-height: 600px;
   }
 }
 

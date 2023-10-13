@@ -12,15 +12,7 @@
     padding-bottom: inc_to_rem(4);
   }
 
-  @include mq(desktop) {
-    padding-bottom: inc_to_rem(5);
-  }
-
-  @include mq(desktop-lg) {
-    padding-bottom: inc_to_rem(6);
-  }
-
-  &--has-mask:after { @include mask; }
+  &:after { @include mask; }
 
   .container {
     justify-content: flex-end;
@@ -28,10 +20,10 @@
   }
 
   &__title {
+    font-family: var(--heading-font);
     font-size: inc_to_rem(5);
     font-weight: var(--font-bold);
     line-height: inc_to_rem(6);
-    margin-bottom: inc_to_rem(1);
 
     @include mq(tablet-lg) {
       font-size: inc_to_rem(6);
@@ -41,13 +33,12 @@
     @include mq(desktop) {
       font-size: inc_to_rem(8);
       line-height: inc_to_rem(9);
-      margin-bottom: inc_to_rem(2);
     }
 
     @include mq(desktop-lg) {
-      font-size: inc_to_rem(10);
-      line-height: inc_to_rem(11);
-      margin-bottom: inc_to_rem(2);
+      font-size: inc_to_rem(9);
+      line-height: inc_to_rem(10);
+      // margin-bottom: inc_to_rem(2);
     }
 
   }

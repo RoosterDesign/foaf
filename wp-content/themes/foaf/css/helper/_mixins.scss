@@ -46,7 +46,7 @@ $breakpoints: (mobile-lg: 375px,
 
 //== Image mask
 
-@mixin mask($bg: rgba(0,0,0,.5)) {
+@mixin mask($bg: rgba(65,45,35,.65)) {
     background: $bg;
     content: '';
     height: 100%;
@@ -85,7 +85,7 @@ $base-unit: 9;
 //== Block Title
 
 @mixin blockTitle() {
-    color: var(--title-colour);
+    color: var(--heading-colour);
     font-family: var(--heading-font);
     font-size: inc_to_rem(4);
     font-weight: var(--font-bold);

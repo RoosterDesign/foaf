@@ -93,14 +93,10 @@
     margin-top: inc_to_rem(3);
 
     @include mq(tablet) {
-      // font-size: 20px;
       margin-top: inc_to_rem(4);
-      // padding: inc_to_rem(3) inc_to_rem(4);
     }
 
     @include mq(desktop-md) {
-      // font-size: inc_to_rem(3);
-      // padding: inc_to_rem(3) inc_to_rem(5);
       margin-top: inc_to_rem(5);
     }
 

@@ -1,8 +1,15 @@
 <?php
-  
-  if (get_field('masthead_image')):
 
-    $image = get_field('masthead_image');
+  $post_id = false;
+
+  if( is_home() )
+  {
+    $post_id = 2121; // specif ID of news page
+  }
+
+  if (get_field('masthead_image', $post_id)):
+
+    $image = get_field('masthead_image', $post_id);
     $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
     $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
     $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
@@ -28,19 +35,22 @@
     </style>
 
   <?php endif; $image = null; ?>
+  
 
   <?php if(is_404()) :
     $title = "Error 404 - Page Not Found";
-  else:
+  elseif(is_home()) :
+    $title = "News";
+  else :
     $title = get_the_title();
   endif;
 ?>
 
-<section class="masthead<?php if( get_field('has_mask') ) { echo ' masthead--has-mask'; }; ?>">
+<section class="masthead">
   <div class="container">    
     <h1 class="masthead__title"><?php echo $title; ?></h1>
-    <?php if(get_field('sub_heading')) : ?>
-      <p class="masthead__body"><?php the_field('sub_heading'); ?></p>
+    <?php if(get_field('sub_heading', $post_id)) : ?>
+      <p class="masthead__body"><?php the_field('sub_heading', $post_id); ?></p>
     <?php endif; ?>    
   </div>
 </section>

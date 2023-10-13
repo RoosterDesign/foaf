@@ -72,11 +72,6 @@
     margin-bottom: inc_to_rem(4);
 
     @include mq(tablet-lg) {
-      // margin: 0 0 inc_to_rem(7);
-      // width: 50%;
-    }
-
-    @include mq(tablet-lg) {
       margin-bottom: inc_to_rem(4);
     }
 
@@ -85,21 +80,6 @@
       padding-top: inc_to_rem(3);
       padding-right: inc_to_rem(5);
     }
-
-   
-
-    &:nth-child(odd) {
-      @media only screen and (min-width: 768px) and (max-width: 992px) {
-        // padding-right: inc_to_rem(3);
-      }
-    }
-
-    &:nth-child(even) {
-      @media only screen and (min-width: 768px) and (max-width: 992px) {
-        // padding-left: inc_to_rem(3);
-      }
-    }
-
 
     &--first {
 
