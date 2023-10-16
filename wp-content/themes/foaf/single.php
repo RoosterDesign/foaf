@@ -40,12 +40,13 @@ Template Name: News
     </div>
   </section>
 
-
-
-
-  <div class="page-content">
     <div class="container">
-    <?php the_content(); ?>
+      
+      <div class="page-content">
+        <?php the_content(); ?>
+        <p><a href="/news" title="Back to news page">Back to news page</a></p>
+      </div>
+
     </div>
   </div>
 

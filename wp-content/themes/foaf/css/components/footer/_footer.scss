@@ -209,7 +209,8 @@
 
   }
 
-  .current-menu-item {
+  .current-menu-item,
+  .current_page_parent {
 
     a {
       font-weight: var(--font-bold);
@@ -278,7 +279,8 @@
 
   }
 
-  .current-menu-item {
+  .current-menu-item,
+  .current_page_parent {
 
     a {
       font-weight: var(--font-bold);

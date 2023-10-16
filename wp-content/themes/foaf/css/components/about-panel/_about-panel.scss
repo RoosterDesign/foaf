@@ -17,6 +17,11 @@
     line-height: inc_to_rem(4);
     margin-bottom: inc_to_rem(2);
 
+    @include mq(desktop) {
+      font-size: 18px;
+      line-height: 36px;
+    }
+
     @include mq(tablet-lg) {
       margin-bottom: inc_to_rem(3);
     }

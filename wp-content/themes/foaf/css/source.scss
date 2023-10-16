@@ -24,8 +24,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/nav/_nav';
 @import './components/footer/_footer';
 @import './components/hero/_hero';
-@import './components/reviews-panel/_reviews-panel';
-@import './components/reservation-panel/_reservation-panel';
 @import './components/card-panel/_card-panel';
 @import './components/menu-panel/_menu-panel';
 @import './components/gallery/_gallery';
@@ -42,6 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/contact-form/_contact-form';
 @import './components/map/_map';
 @import './components/page-content/_page-content';
+@import './components/pagination/_pagination';
 
 :root {
     
@@ -72,17 +71,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --max-content-width-tablet: 992px;
 
 
-  // font-family: 'Mulish', sans-serif;
-  // font-family: 'Outfit', sans-serif;
-  // font-family: 'Poppins', sans-serif;
+
   
   //== Type
-  --font: 'Outfit', sans-serif;
+  --font: 'Fira Sans', sans-serif;
   --heading-font: 'Young Serif', serif;
   --font-light: 300;
   --font-regular: 400;
-  --font-medium: 500;
-  --font-semi-bold: 600;
   --font-bold: 700;
   --font-colour: var(--darkGrey);
   --text-link-colour: var(--darkGrey);
@@ -101,7 +96,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Header  
-  --header-bg: var(--foaf-brown);
+  --header-bg: var(--white);
   --header-height: 80px;
   --header-padding: 20px;  
 
@@ -111,10 +106,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Nav
-  --mobile-nav-bg: var(--foaf-brown);
-  --nav-link-colour: var(--white);
+  --mobile-nav-bg: var(--white);
+  --nav-link-colour: var(--foaf-brown);
   --mobile-nav-colour: var(--white);
-  --mobile-close-colour: var(--white);
+  --mobile-close-colour: var(--foaf-brown);
   --mobile-nav-mask: rgba(0,0,0,0.9);
   --nav-padding: 40px;
 

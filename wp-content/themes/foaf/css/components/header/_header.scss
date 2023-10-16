@@ -19,12 +19,6 @@
   }
 
   @include mq(tablet-lg) {
-    // align-items: flex-start;
-    // flex-direction: column;
-    // justify-content: center;
-  }
-
-  @include mq(tablet-lg) {
     align-items: center;
     flex-direction: row;
   }
@@ -37,29 +31,7 @@
   }
 
   &__logo {
-    // display: flex;
     height: 80%;
-    // min-width: 200px;
-    // width: 200px;
-
-    @include mq(tablet) {
-      // min-width: 200px;
-      // width: 200px;
-    }
-
-    @include mq(tablet-lg) {
-
-    }
-
-    @include mq(desktop) {
-      // min-width: 250px;
-      // width: 250px;
-    }
-
-    @include mq(desktop-lg) {
-      // min-width: 300px;
-      // width: 300px;
-    }
 
     img {
       height: 100%;
@@ -107,105 +79,6 @@ body.home {
 }
 
 
-
-//== Contact 
-
-.header-contact {
-  border-top: 2px solid var(--mobile-nav-colour);
-  margin-top: auto;
-  padding: inc_to_rem(3) 0;
-  margin: auto var(--nav-padding) 0;
-
-  @include mq(tablet) {
-    margin: auto var(--nav-padding) 0;
-    padding: inc_to_rem(3) 0 inc_to_rem(5);
-  }
-
-  @include mq(tablet-lg) {
-    border: none;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-  }
-
-  P {
-    color: var(--mobile-nav-colour);
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    margin-bottom: inc_to_rem(2);
-
-    @include mq(tablet) {
-      align-items: center;
-      font-size: inc_to_rem(2);
-      margin-bottom: inc_to_rem(3);
-    }
-
-    @include mq(tablet-lg) {
-      flex-direction: row-reverse;
-      font-size: 14px;
-      margin: 0;
-      position: absolute;
-      text-align: right;
-      top: 25px;
-    }
-
-    @include mq(desktop) {
-      align-items: flex-end;
-      flex-direction: column;
-      font-size: 16px;
-      margin-right: inc_to_rem(3);
-      position: relative;
-      top: auto;
-    }
-
-    @include mq(desktop-md) {
-      margin-right: inc_to_rem(4);
-    }
-
-    strong {
-      display: block;
-      font-size: inc_to_rem(3);
-      margin-bottom: inc_to_rem(1);
-
-      @include mq(tablet) {
-        font-size: inc_to_rem(4);
-      }
-
-      @include mq(tablet-lg) {
-        display: inline-block;
-        font-size: 26px;
-        margin: 0 0 0 inc_to_rem(2);
-      }
-
-      @include mq(desktop) {
-        display: block;
-        font-size: inc_to_rem(3);
-        margin: 0 0 inc_to_rem(1);
-      }
-
-    }
-
-  }
-
-
-  &__btn {
-
-    @media only screen and (max-width: 992px) {
-      box-shadow: none;
-      width: 100%;
-    }
-
-    // @include mq(tablet-lg) {
-    //   display: none;
-    // }
-    
-  }
-
-}
-
-
 //== Burger Menu
 
 .burger {
@@ -242,4 +115,10 @@ body.home {
 
   }
 
+}
+
+.site-header--sticky .burger span,
+.site-header--sticky .burger span:before,
+.site-header--sticky .burger span:after {
+  background: var(--nav-link-colour);
 }

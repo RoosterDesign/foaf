@@ -33,7 +33,7 @@ Template Name: Homepage
     <div class="container">
     <h2 class="card-panel__title">Latest News</h2>		
       <div class="card-list">
-      <?php $args = array( 'post_type' => 'post', 'posts_per_page'	=> 1 );
+      <?php $args = array( 'post_type' => 'post', 'posts_per_page'	=> 3 );
     $post_query = new WP_Query($args);
     if($post_query->have_posts() ) {
         while($post_query->have_posts() ) :

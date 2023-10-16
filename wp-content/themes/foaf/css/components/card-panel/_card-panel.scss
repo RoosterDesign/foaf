@@ -18,22 +18,15 @@
 }
 
 .card-list {  
-  margin-bottom: inc_to_rem(4);
 
   @include mq(tablet-lg) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: inc_to_rem(4);    
-    margin-bottom: inc_to_rem(6);
   }
 
   @include mq(desktop) {
     grid-gap: inc_to_rem(5);
-    margin-bottom: inc_to_rem(7);
-  }
-
-  @include mq(desktop-md) {
-    margin-bottom: inc_to_rem(9);
   }
 
 }
@@ -124,10 +117,11 @@
 
   &__body {
     font-size: inc_to_rem(2);
-    line-height: inc_to_rem(3);
+    line-height: inc_to_rem(4);
 
     @include mq(desktop) {
-      line-height: inc_to_rem(4);
+      font-size: 18px;      
+      line-height: 36px;
     }
 
   }

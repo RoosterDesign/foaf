@@ -48,11 +48,6 @@
       padding: inc_to_rem(2);
     }
 
-    @include mq(tablet-lg) {
-      // font-size: var(--sub-title-font-size);
-      // line-height: var(--sub-title-line-height);
-    }
-
     @include mq(desktop) {
       font-size: inc_to_rem(3);
       line-height: inc_to_rem(4);

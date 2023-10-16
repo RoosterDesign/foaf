@@ -45,7 +45,6 @@ Template Name: Contact
     include get_theme_file_path("templates/partials/square-row.php");
   ?>
 
-  <?php include get_theme_file_path("templates/partials/reservations-panel.php"); ?>    
 
 </div>
 

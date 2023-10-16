@@ -28,7 +28,7 @@ register_nav_menus(
 function foaf_scripts() {
   	
 	//== Google Fonts
-	wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&family=Mulish:wght@400;700&family=Outfit:wght@400;700&family=Poppins:wght@400;700&family=Signika:wght@400;700&family=Young+Serif&display=swap', array(), null );
+	wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&Rubik:wght@300;400;700&family=Young+Serif&display=swap', array(), null );
 
 
 	//== jQuery
@@ -344,6 +344,15 @@ function awesome_page_create() {
 			}
 			$masthead_fallback_image = get_option('masthead_fallback_image', '');
 
+			//== Fallback Card Image
+			if (isset($_POST['masthead_card_image'])) {
+				$masthead_card_image = stripslashes($_POST['masthead_card_image']);
+				update_option('masthead_card_image', $masthead_card_image);
+			}
+			$masthead_card_image = get_option('masthead_card_image', '');
+
+			
+
 
 		?>
 
@@ -409,6 +418,11 @@ function awesome_page_create() {
 					<div class="settingsGroup">
 						<label for="masthead_fallback_image">Fallback Masthead Image</label><br>
 						<input type="text" name="masthead_fallback_image" id="masthead_fallback_image" value="<?php echo $masthead_fallback_image; ?>">
+					</div>
+
+					<div class="settingsGroup">
+						<label for="masthead_card_image">Fallback Card Image</label><br>
+						<input type="text" name="masthead_card_image" id="masthead_card_image" value="<?php echo $masthead_card_image; ?>">
 					</div>
 
     			<input type="submit" value="Save" class="button button-primary button-large">

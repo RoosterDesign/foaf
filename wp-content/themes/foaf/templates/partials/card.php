@@ -2,7 +2,11 @@
   $image = get_field('image');
   if( $image ):
     $imageUrl = $image['sizes'][ 'card' ];
-  endif;  
+  elseif(has_post_thumbnail()) :
+    $imageUrl = get_the_post_thumbnail_url(get_the_ID(), 'card');
+  else:
+    $imageUrl = get_option('masthead_card_image');
+  endif;
 ?>
           
   <a href="<?php the_permalink(); ?>" class="card">

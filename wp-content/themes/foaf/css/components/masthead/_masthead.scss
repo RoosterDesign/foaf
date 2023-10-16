@@ -61,27 +61,3 @@
   }  
   
 }
-
-
-//== Reservations Page
-
-body.page-template-reservations {
-
-  .masthead {
-
-    @include mq(desktop) {
-      height: 575px;
-    }
-
-    &__body {
-      @include mq(desktop) {
-        max-width: 60%;
-      }
-      @include mq(desktop-lg) {
-        max-width: 800px;
-      }
-    }
-
-  }
-
-}

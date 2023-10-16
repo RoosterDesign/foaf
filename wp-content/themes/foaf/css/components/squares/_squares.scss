@@ -174,9 +174,9 @@ body.page-template-contact {
 
     p {
 
-      @include mq(desktop-lg) {
-        font-size: inc_to_rem(3);
-        line-height: inc_to_rem(5);
+      @include mq(desktop) {
+        font-size: 18px;
+        line-height: 36px;
         margin-bottom: inc_to_rem(5);
       }
     

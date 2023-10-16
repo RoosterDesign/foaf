@@ -1,16 +1,20 @@
 .page-content {
-  padding: inc_to_rem(3) 0;
+  margin-block: inc_to_rem(3);
   
   @include mq(tablet) {
-    padding: inc_to_rem(4) 0;
+    @include smallPanel(false);
+    margin-block: inc_to_rem(5);
+    padding: inc_to_rem(4) inc_to_rem(5);
   }
 
   @include mq(desktop) {
-    padding: inc_to_rem(5) 0;
+    margin-block: inc_to_rem(7);
+    padding: inc_to_rem(6) inc_to_rem(7);
   }
 
-  @include mq(desktop-md) {
-    padding: inc_to_rem(9) 0;
+  @include mq(full) {
+    margin-block: inc_to_rem(10);
+    padding: inc_to_rem(8) inc_to_rem(9);
   }
 
   h1, h2 {
@@ -69,6 +73,7 @@
 
   p, li {
     font-size: inc_to_rem(2);
+    font-weight: var(--font-light);
     line-height: inc_to_rem(4);
     margin-bottom: inc_to_rem(3);
 
@@ -77,8 +82,8 @@
     }
 
     @include mq(desktop-md) {
-      font-size: inc_to_rem(3);
-      line-height: inc_to_rem(5);
+      font-size: 18px;
+      line-height: 36px;
       margin-bottom: inc_to_rem(5);
     }
 
