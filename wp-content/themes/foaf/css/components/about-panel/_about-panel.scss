@@ -34,7 +34,7 @@
         line-height: inc_to_rem(5);
       }
 
-      @include mq(desktop-lg) {
+      @include mq(desktop-md) {
         font-size: inc_to_rem(4);
         line-height: inc_to_rem(6);
         margin-bottom: inc_to_rem(4);

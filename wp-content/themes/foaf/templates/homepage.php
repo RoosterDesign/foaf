@@ -15,10 +15,10 @@ Template Name: Homepage
       <?php $posts = get_posts(array( 'post_type' => 'activities', 'numberposts'	=> 3 ));
       if ($posts) { foreach($posts as $post): setup_postdata($post);
         include get_theme_file_path("templates/partials/card.php");
-      endforeach;						
+      endforeach;	
       } else { ?>
-        <p class="no-resources">We currently have no resources for this category, please check back again soon.</p>
-      <?php }; ?>
+        <p class="no-resources">We currently have no activities, please check back again soon.</p>
+      <?php }; wp_reset_postdata(); ?>
       </div>      
     </div>
   </section>
@@ -41,8 +41,8 @@ Template Name: Homepage
           include get_theme_file_path("templates/partials/card.php");
         endwhile;
       } else { ?>
-        <p>NO POSTS</p>
-    <?php } ?>
+        <p class="no-resources">We currently have no news items, please check back again soon.</p>
+    <?php }; wp_reset_postdata(); ?>
       </div>      
     </div>
   </section>

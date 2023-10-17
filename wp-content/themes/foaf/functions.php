@@ -82,6 +82,9 @@ add_action( 'wpforms_wp_footer_end', 'wpf_dev_disable_scroll_effect_on_all_forms
 
 function create_posttype() {
   	
+	add_theme_support('post-thumbnails');
+	add_post_type_support( 'activities', 'thumbnail' );
+
 	register_post_type(
 		'activities',
 			array(
@@ -90,53 +93,57 @@ function create_posttype() {
 							'singular_name' => __( 'Activity' )
 					),
 					'public' => true,
-					'has_archive' => false,
-					'rewrite' => array('slug' => 'activities'),
+					'has_archive' => true,
+					'rewrite' => array('slug' => 'activities', 'with_front' => false),
+					'hierarchical' => true,
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-calendar',
 					'menu_position' => 6
 			)
 	);
+
 	register_taxonomy('activities_category', 'activities', array('hierarchical' => true, 'label' => 'Categories', 'query_var' => true, 'rewrite' => true));
 
-
-	register_post_type(
-		'news',
-			array(
-					'labels' => array(
-							'name' => __( 'News' ),
-							'singular_name' => __( 'News' )
-					),
-					'public' => true,
-					'has_archive' => false,
-					'rewrite' => array('slug' => 'news'),
-					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-calendar',
-					'menu_position' => 6
-			)
-	);
-
-
-
-	// register_post_type(
-	// 	'content-blocks',
-	// 		array(
-	// 				'labels' => array(
-	// 						'name' => __( 'Content Blocks' ),
-	// 						'singular_name' => __( 'Content Block' )
-	// 				),
-	// 				'public' => true,
-	// 				'has_archive' => false,
-	// 				'rewrite' => array('slug' => 'content-blocks'),
-	// 				'show_in_rest' => true,
-	// 				'menu_icon'   => 'dashicons-align-center',
-	// 				'menu_position' => 5
-	// 		)
-	// );
-
-}
-
+};
 add_action( 'init', 'create_posttype' );
+
+
+function change_page_menu_classes($menu)
+{
+    global $post;
+    if (get_post_type($post) == 'activities')
+    {
+        $menu = str_replace( 'current_page_parent', '', $menu ); // remove all current_page_parent classes
+        $menu = str_replace( 'menu-item-2133', 'menu-item-2133 current-menu-item', $menu ); // add the current_page_parent class to the page you want
+    }
+    return $menu;
+}
+add_filter( 'nav_menu_css_class', 'change_page_menu_classes', 10,2 );
+
+
+
+
+// add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2);
+// function current_type_nav_class($css_class, $item)
+// {
+//     if (get_post_type() === 'activities') {
+//         $current_value = 'current_page_parent'; 
+//         $css_class = array_filter($css_class, function ($element) use ($current_value) {
+//             return ($element != $current_value);
+//         });
+//     }
+
+//     $post_type = get_query_var('activities');
+//     if ($item->attr_title !== '' && $item->attr_title === $post_type) {     
+//         array_push($css_class, 'current_page_parent');
+//     };
+
+//     return $css_class;
+// }
+
+
+
+
 
 
 

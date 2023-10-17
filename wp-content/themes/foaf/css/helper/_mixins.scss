@@ -87,19 +87,19 @@ $base-unit: 8;
 @mixin blockTitle() {
     color: var(--heading-colour);
     font-family: var(--heading-font);
-    font-size: inc_to_rem(4);
+    font-size: inc_to_rem(3);
     font-weight: var(--font-bold);
     line-height: inc_to_rem(5);
     margin-bottom: inc_to_rem(2);
 
     @include mq(tablet-lg) {
-      font-size: inc_to_rem(5);
+      font-size: inc_to_rem(4);
       margin-bottom: inc_to_rem(3);
     }
 
     @include mq(desktop) {
-      font-size: inc_to_rem(6);
-      margin-bottom: inc_to_rem(4);
+      font-size: inc_to_rem(5);
+      margin-bottom: inc_to_rem(5);
     }
 }
 
