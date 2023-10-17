@@ -78,6 +78,19 @@ add_action( 'wpforms_wp_footer_end', 'wpf_dev_disable_scroll_effect_on_all_forms
 
 
 
+//= Check if there is pagination
+
+function is_paginated() {
+	global $wp_query;
+	if ( $wp_query->max_num_pages > 1 ) {
+			return true;
+	} else {
+			return false;
+	}
+}
+
+
+
 //== Custom Post Types
 
 function create_posttype() {
@@ -93,9 +106,9 @@ function create_posttype() {
 							'singular_name' => __( 'Activity' )
 					),
 					'public' => true,
-					'has_archive' => true,
+					'has_archive' => false,
 					'rewrite' => array('slug' => 'activities', 'with_front' => false),
-					'hierarchical' => true,
+					'hierarchical' => false,
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-calendar',
 					'menu_position' => 6

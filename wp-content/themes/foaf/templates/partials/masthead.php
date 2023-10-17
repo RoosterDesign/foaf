@@ -26,9 +26,9 @@
   <?php if(is_404()) :
     $title = "Error 404 - Page Not Found";
   elseif(is_home()) :
-    $title = "News";
-  elseif(get_post_type($post) == 'activities'):
-    $title = "Activities";
+    $title = "News"; 
+  elseif(is_post_type_archive('activities')):
+      $title = "Activities";
   else :
     $title = get_the_title();
   endif;

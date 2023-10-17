@@ -1,14 +1,11 @@
-<?php
-/*
-Template Name: News
-*/
-?>
 <?php get_header(); ?>
 <div class="page">
   <?php include get_theme_file_path("templates/partials/masthead.php"); ?>  
 
-  <section class="card-panel">
-    <div class="container">
+  <div class="container">
+
+
+    
       
 
       <?php if ( have_posts() ) : ?>
@@ -25,10 +22,12 @@ Template Name: News
         <!-- End of the main loop -->
 
         <!-- Start the pagination functions after the loop. -->
-        <div class="pagination">
-          <div class="pagination__link --next"><?php previous_posts_link( 'Previous Page' ); ?></div>
-          <div class="pagination__link pagination__link--previous"><?php next_posts_link( 'Next Page' ); ?></div>
-        </div>
+        <?php if(is_paginated()) : ?>
+          <div class="pagination">
+            <div class="pagination__link"><?php previous_posts_link( 'Previous Page' ); ?></div>
+            <div class="pagination__link"><?php next_posts_link( 'Next Page' ); ?></div>
+          </div>
+        <?php endif; ?>
         <!-- End the pagination functions after the loop. -->
 
         <?php else : ?>
@@ -38,8 +37,8 @@ Template Name: News
         <?php endif; ?>
 
       
-    </div>
-  </section>
+
+  </div>
   
 </div>
 <?php get_footer(); ?>

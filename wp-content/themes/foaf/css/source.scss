@@ -65,7 +65,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== General
-  --unit: 9px;
+  --unit: 8px;
   --body-bg: var(--lightGrey);
   --border-radius: 2px;
   --max-content-width-tablet: 992px;
@@ -127,11 +127,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --panel-bg: var(--white);
   --panel-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   --panel-box-shadow-hover: 0 15px 30px rgba(0,0,0,0.4);
-  --panel-padding: calc(9px * 4) calc(9px * 3);
+  --panel-padding: calc(8px * 4) calc(8px * 3);
   
 
   //== Blocks
-  --block-padding: calc(9px * 5);
+  --block-padding: calc(8px * 5);
 
 
   //== Hero
@@ -160,7 +160,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @include mq(tablet) {
   :root {
     --nav-padding: 60px;
-    --block-padding: calc(9px * 7);
+    --block-padding: calc(8px * 7);
     --form-input-height: 60px;
     --form-textarea-height: 150px;
   }
@@ -175,7 +175,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --header-padding: 40px;
     --max-content-width: 1200px;
     --hero-height: 600px;
-    --block-padding: calc(9px * 8);
+    --block-padding: calc(8px * 8);
     --masthead-height: 350px;
   }
 }
@@ -188,8 +188,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --header-height: 150px;
     --max-content-width: 1412px;
     --hero-height: 800px;
-    --panel-padding: calc(9px * 5) calc(9px * 4);
-    --block-padding: calc(9px * 12);
+    --panel-padding: calc(8px * 5) calc(8px * 4);
+    --block-padding: calc(8px * 12);
     --masthead-height: 400px;
   }
 }
@@ -201,8 +201,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   :root {
     --hero-height: 900px;
     --block-padding: calc(12px * 12);
-    --panel-padding: calc(9px * 6) calc(9px * 5);
-    --masthead-height: 450px;
+    --panel-padding: calc(8px * 6) calc(8px * 5);
+    // --masthead-height: 450px;
   }
 }
 
@@ -211,7 +211,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @include mq(desktop-lg) {
   :root {
-    --max-content-width: 1600px;
+    // --max-content-width: 1600px;
     --header-padding: 60px; 
     --footer-col-width: 400px;
   }
@@ -312,4 +312,42 @@ p {
 a[href^="tel:"] {
   color: inherit;
   text-decoration: none;
+}
+
+
+
+//= Activities
+
+.activity-category {
+  margin-bottom: inc_to_rem(6);
+
+  @include mq(tablet) {
+    margin-bottom: inc_to_rem(8);
+  }
+
+  @include mq(tablet-lg) {
+    margin-bottom: inc_to_rem(10);
+  }
+
+  @include mq(desktop) {
+    margin-bottom: inc_to_rem(15);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.page-content + .activity-category {
+  margin-top: inc_to_rem(6);
+
+  @include mq(tablet) {
+    margin-top: inc_to_rem(8);
+  }
+
+  @include mq(tablet-lg) {
+    margin-top: inc_to_rem(10);
+  }
+
 }

@@ -1,19 +1,15 @@
 .page-content {
-  margin-block: inc_to_rem(3);
   
   @include mq(tablet) {
     @include smallPanel(false);
-    margin-block: inc_to_rem(5);
     padding: inc_to_rem(4) inc_to_rem(5);
   }
 
   @include mq(desktop) {
-    margin-block: inc_to_rem(7);
     padding: inc_to_rem(6) inc_to_rem(7);
   }
 
   @include mq(full) {
-    margin-block: inc_to_rem(10);
     padding: inc_to_rem(8) inc_to_rem(9);
   }
 

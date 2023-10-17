@@ -19,6 +19,19 @@
     height: 100%;
   }
 
+  + .container {
+    padding-block: inc_to_rem(6);
+
+    @include mq(tablet) {
+      padding-block: inc_to_rem(8);
+    }
+
+    @include mq(tablet-lg) {
+      padding-block: inc_to_rem(10);
+    }
+    
+  }
+
   &__title {
     font-family: var(--heading-font);
     font-size: inc_to_rem(5);
