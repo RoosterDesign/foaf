@@ -20,14 +20,14 @@
   }
 
   + .container {
-    padding-block: inc_to_rem(6);
+    padding-block: inc_to_rem(4);
 
     @include mq(tablet) {
-      padding-block: inc_to_rem(8);
+      padding-block: inc_to_rem(6);
     }
 
-    @include mq(tablet-lg) {
-      padding-block: inc_to_rem(10);
+    @include mq(desktop) {
+      padding-block: inc_to_rem(8);
     }
     
   }

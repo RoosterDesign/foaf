@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Contact
+Template Name: Membership
 */
 ?>
 <?php get_header(); ?>
@@ -12,21 +12,11 @@ Template Name: Contact
   <div class="container">
 
     <div class="page-content">
-      <?php echo do_shortcode('[wpforms id="2196" title="false" description="true"]'); ?>
-    </div>
-
-    <div class="page-content">
       <?php the_content(); ?>      
+      <?php echo do_shortcode('[wpforms id="2220" title="false" description="true"]'); ?>
     </div>
     
   </div>
-
-
-  <!-- Google Map -->
-  <div class="map">
-    <?php the_field('google_map_embed') ?>
-  </div>
-  <!-- end: Google Map -->
 
 </div>
 

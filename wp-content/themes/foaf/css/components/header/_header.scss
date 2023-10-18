@@ -42,10 +42,13 @@
 
   &__donate {
     align-self: stretch;
+    font-size: 16px;
     margin: auto var(--nav-padding) var(--nav-padding);
-
+    padding: inc_to_rem(2) inc_to_rem(3);
+    
     @include mq(tablet-lg) {
       margin: 0;
+      padding: 15px 25px;
     }
 
   }
