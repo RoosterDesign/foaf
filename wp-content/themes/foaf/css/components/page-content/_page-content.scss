@@ -26,7 +26,12 @@
 
   }
 
-  h1, h2 {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-colour);
+    font-family: var(--heading-font);
+  }
+
+  h1, h2 {    
     font-size: inc_to_rem(4);
     font-weight: var(--font-bold);
     line-height: inc_to_rem(5);
@@ -80,7 +85,7 @@
     margin-top: inc_to_rem(2);
   }
 
-  p, li {
+  p, li, th, td {
     font-size: inc_to_rem(2);
     font-weight: var(--font-light);
     line-height: inc_to_rem(4);
@@ -112,6 +117,27 @@
 
     li { margin: 0; }
 
+  }
+
+  .table {
+      max-width: 100%;
+      overflow: auto;
+  }
+
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      
+      tr {
+          padding: 0;
+      }
+      
+      td {
+          border: 1px solid #ccc;
+          padding: 20px;
+      }
+      
   }
 
 }

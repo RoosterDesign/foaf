@@ -262,6 +262,10 @@ p {
   margin: 0;
 }
 
+b, strong {
+  font-weight: var(--font-bold);
+}
+
 
 //== Responsive Images
 
@@ -350,4 +354,49 @@ a[href^="tel:"] {
     margin-top: inc_to_rem(10);
   }
 
+}
+
+
+//= WP Form Overrides
+
+@media only screen and (max-width: 991px) {
+
+  html .wpforms-container .wpforms-field.wpforms-one-half {
+    float: none;
+    margin-inline: 0;
+    width: 100%;
+  }
+
+}
+
+html .wpforms-container {
+
+  .wpforms-field-checkbox,
+  .wpforms-field-radio {
+
+    .wpforms-field-label {
+      margin-bottom: 20px;
+    }
+
+    &.wpforms-has-error input {
+      background: none;
+    }
+
+  }
+
+  .wpforms-field-radio {
+    
+    .wpforms-field-description {
+      margin-top: 20px;
+    }
+
+  }
+
+}
+
+
+//= Membership Form
+
+html .wpforms-container.membership-form {
+  margin-bottom: inc_to_rem(8) !important;
 }

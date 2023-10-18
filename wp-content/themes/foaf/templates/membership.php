@@ -12,8 +12,8 @@ Template Name: Membership
   <div class="container">
 
     <div class="page-content">
-      <?php the_content(); ?>      
       <?php echo do_shortcode('[wpforms id="2220" title="false" description="true"]'); ?>
+      <?php the_content(); ?>
     </div>
     
   </div>

@@ -3412,6 +3412,11 @@ html div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
   }
 }
 
+.page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6 {
+  color: var(--heading-colour);
+  font-family: var(--heading-font);
+}
+
 .page-content h1, .page-content h2 {
   font-size: 3.2rem;
   font-weight: var(--font-bold);
@@ -3469,7 +3474,7 @@ html div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
   margin-top: 1.6rem;
 }
 
-.page-content p, .page-content li {
+.page-content p, .page-content li, .page-content th, .page-content td {
   font-size: 1.6rem;
   font-weight: var(--font-light);
   line-height: 3.2rem;
@@ -3477,24 +3482,24 @@ html div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
 }
 
 @media (min-width: 1366px) {
-  .page-content p, .page-content li {
+  .page-content p, .page-content li, .page-content th, .page-content td {
     margin-bottom: 3.2rem;
   }
 }
 
 @media (min-width: 1441px) {
-  .page-content p, .page-content li {
+  .page-content p, .page-content li, .page-content th, .page-content td {
     font-size: 18px;
     line-height: 36px;
     margin-bottom: 4rem;
   }
 }
 
-.page-content p:last-child, .page-content li:last-child {
+.page-content p:last-child, .page-content li:last-child, .page-content th:last-child, .page-content td:last-child {
   margin-bottom: 0;
 }
 
-.page-content p a:not([href^="tel:"]), .page-content li a:not([href^="tel:"]) {
+.page-content p a:not([href^="tel:"]), .page-content li a:not([href^="tel:"]), .page-content th a:not([href^="tel:"]), .page-content td a:not([href^="tel:"]) {
   border-bottom: 2px solid var(--text-link-colour);
   color: var(--text-link-colour);
   font-weight: var(--font-bold);
@@ -3503,7 +3508,7 @@ html div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
   transition: color .2s ease-in-out;
 }
 
-.page-content p a:not([href^="tel:"]):hover, .page-content li a:not([href^="tel:"]):hover {
+.page-content p a:not([href^="tel:"]):hover, .page-content li a:not([href^="tel:"]):hover, .page-content th a:not([href^="tel:"]):hover, .page-content td a:not([href^="tel:"]):hover {
   color: var(--text-link-hover-colour);
 }
 
@@ -3520,6 +3525,26 @@ html div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
 
 .page-content ol li, .page-content ul li {
   margin: 0;
+}
+
+.page-content .table {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.page-content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.page-content table tr {
+  padding: 0;
+}
+
+.page-content table td {
+  border: 1px solid #ccc;
+  padding: 20px;
 }
 
 .pagination {
@@ -3709,6 +3734,10 @@ p {
   margin: 0;
 }
 
+b, strong {
+  font-weight: var(--font-bold);
+}
+
 .img-responsive {
   display: block;
   height: auto;
@@ -3832,5 +3861,31 @@ a[href^="tel:"] {
   .page-content + .activity-category {
     margin-top: 8rem;
   }
+}
+
+@media only screen and (max-width: 991px) {
+  html .wpforms-container .wpforms-field.wpforms-one-half {
+    float: none;
+    margin-inline: 0;
+    width: 100%;
+  }
+}
+
+html .wpforms-container .wpforms-field-checkbox .wpforms-field-label,
+html .wpforms-container .wpforms-field-radio .wpforms-field-label {
+  margin-bottom: 20px;
+}
+
+html .wpforms-container .wpforms-field-checkbox.wpforms-has-error input,
+html .wpforms-container .wpforms-field-radio.wpforms-has-error input {
+  background: none;
+}
+
+html .wpforms-container .wpforms-field-radio .wpforms-field-description {
+  margin-top: 20px;
+}
+
+html .wpforms-container.membership-form {
+  margin-bottom: 6.4rem !important;
 }
 /*# sourceMappingURL=style.css.map */
