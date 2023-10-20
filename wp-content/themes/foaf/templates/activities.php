@@ -38,7 +38,7 @@ Template Name: Activities
                 endforeach; ?>
               </div>  
             <?php } else { ?>
-              <p class="no-resources">We currently have no activities for this category, please check back again soon.</p>
+              <p class="no-results">We currently have no activities for this category, please check back again soon.</p>
             <?php };						
             ?>			
 

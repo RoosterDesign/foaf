@@ -1,8 +1,9 @@
-<?php if(has_post_thumbnail()) :
+<?php  wp_reset_postdata();
+    if(has_post_thumbnail()) :
     $mobileImage = get_the_post_thumbnail_url(get_the_ID(), 'fw-img-mobile');
     $tabletImage = get_the_post_thumbnail_url(get_the_ID(), 'fw-img-tablet');
     $desktopImage = get_the_post_thumbnail_url(get_the_ID(), 'fw-img-desktop');
-    $desktopLgImage = get_the_post_thumbnail_url(get_the_ID(), 'fw-img-desktop-lg');
+    $desktopLgImage = get_the_post_thumbnail_url(get_the_ID(), 'fw-img-desktop-lg');    
   ?>
   <style>
     .masthead { background-image: url("<?php echo $mobileImage; ?>"); }

@@ -31,9 +31,7 @@
         <!-- End the pagination functions after the loop. -->
 
         <?php else : ?>
-
-        <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
-
+          <p class="no-results"><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
         <?php endif; ?>
 
       

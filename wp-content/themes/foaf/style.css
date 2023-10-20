@@ -866,14 +866,14 @@ body.home .site-header {
 }
 
 .burger span {
-  background: var(--white);
+  background: var(--nav-link-colour);
   border-radius: 2px;
   height: 3px;
   width: 40px;
 }
 
 .burger span:before, .burger span:after {
-  background: var(--white);
+  background: var(--nav-link-colour);
   border-radius: 2px;
   content: '';
   display: block;
@@ -890,9 +890,18 @@ body.home .site-header {
   bottom: 0;
 }
 
+body.home .burger span,
+body.home .burger span:before,
+body.home .burger span:after {
+  background: #fff;
+}
+
 .site-header--sticky .burger span,
 .site-header--sticky .burger span:before,
-.site-header--sticky .burger span:after {
+.site-header--sticky .burger span:after,
+body.home .site-header--sticky .burger span,
+body.home .site-header--sticky .burger span:before,
+body.home .site-header--sticky .burger span:after {
   background: var(--nav-link-colour);
 }
 
@@ -3483,15 +3492,15 @@ html div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-red
 
 @media (min-width: 1366px) {
   .page-content p, .page-content li, .page-content th, .page-content td {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.4rem;
   }
 }
 
 @media (min-width: 1441px) {
   .page-content p, .page-content li, .page-content th, .page-content td {
     font-size: 18px;
-    line-height: 36px;
-    margin-bottom: 4rem;
+    line-height: 34px;
+    margin-bottom: 3.2rem;
   }
 }
 
@@ -3887,5 +3896,18 @@ html .wpforms-container .wpforms-field-radio .wpforms-field-description {
 
 html .wpforms-container.membership-form {
   margin-bottom: 6.4rem !important;
+}
+
+.no-results {
+  font-size: 1.6rem;
+  font-weight: var(--font-light);
+  line-height: 3.2rem;
+}
+
+@media (min-width: 1441px) {
+  .no-results {
+    font-size: 18px;
+    line-height: 36px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

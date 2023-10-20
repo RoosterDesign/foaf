@@ -11,8 +11,8 @@ Template Name: Contact
 
   <div class="container">
 
-    <div class="page-content">
-      <?php echo do_shortcode('[wpforms id="2196" title="false" description="true"]'); ?>
+    <div class="page-content">      
+      <?php echo do_shortcode(get_field('form_id')); ?>
     </div>
 
     <div class="page-content">

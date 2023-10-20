@@ -96,14 +96,14 @@ body.home {
   }
 
   span {
-    background: var(--white);
+    background: var(--nav-link-colour);
     border-radius: 2px;    
     height: 3px;    
     width: 40px;
 
     &:before,
     &:after {
-      background: var(--white);
+      background: var(--nav-link-colour);
       border-radius: 2px;
       content: '';
       display: block;
@@ -120,8 +120,21 @@ body.home {
 
 }
 
+body.home .burger {
+
+  span,
+  span:before,
+  span:after {
+    background: #fff;
+  }
+
+}
+
 .site-header--sticky .burger span,
 .site-header--sticky .burger span:before,
-.site-header--sticky .burger span:after {
+.site-header--sticky .burger span:after,
+body.home .site-header--sticky .burger span,
+body.home .site-header--sticky .burger span:before,
+body.home .site-header--sticky .burger span:after {
   background: var(--nav-link-colour);
 }

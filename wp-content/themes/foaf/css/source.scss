@@ -400,3 +400,18 @@ html .wpforms-container {
 html .wpforms-container.membership-form {
   margin-bottom: inc_to_rem(8) !important;
 }
+
+
+//= No Results
+
+.no-results {
+  font-size: inc_to_rem(2);
+  font-weight: var(--font-light);
+  line-height: inc_to_rem(4);
+
+  @include mq(desktop-md) {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+}

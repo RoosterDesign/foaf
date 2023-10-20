@@ -123,39 +123,21 @@ add_action( 'init', 'create_posttype' );
 
 function change_page_menu_classes($menu)
 {
-    global $post;
+  	
+		// $ACTIVITIES_MENU_ID = 2133;// LOCAL
+		 $ACTIVITIES_MENU_ID = 2250; // STAGE
+		// $ACTIVITIES_MENU_ID = ####; // PROD  
+	
+		global $post;
+
     if (get_post_type($post) == 'activities')
     {
         $menu = str_replace( 'current_page_parent', '', $menu ); // remove all current_page_parent classes
-        $menu = str_replace( 'menu-item-2133', 'menu-item-2133 current-menu-item', $menu ); // add the current_page_parent class to the page you want
+        $menu = str_replace( 'menu-item-'.$ACTIVITIES_MENU_ID, 'menu-item-'.$ACTIVITIES_MENU_ID.' current-menu-item', $menu ); // add the current_page_parent class to the page you want
     }
     return $menu;
 }
 add_filter( 'nav_menu_css_class', 'change_page_menu_classes', 10,2 );
-
-
-
-
-// add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2);
-// function current_type_nav_class($css_class, $item)
-// {
-//     if (get_post_type() === 'activities') {
-//         $current_value = 'current_page_parent'; 
-//         $css_class = array_filter($css_class, function ($element) use ($current_value) {
-//             return ($element != $current_value);
-//         });
-//     }
-
-//     $post_type = get_query_var('activities');
-//     if ($item->attr_title !== '' && $item->attr_title === $post_type) {     
-//         array_push($css_class, 'current_page_parent');
-//     };
-
-//     return $css_class;
-// }
-
-
-
 
 
 
