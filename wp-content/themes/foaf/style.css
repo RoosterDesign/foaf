@@ -760,7 +760,7 @@ html div.wpforms-container-full button[type=submit]:active {
   z-index: 99;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .site-header {
     background: var(--header-bg);
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
@@ -866,20 +866,32 @@ body.home .site-header {
 }
 
 .burger span {
-  background: var(--nav-link-colour);
+  background: #fff;
   border-radius: 2px;
   height: 3px;
   width: 40px;
 }
 
+@media (min-width: 992px) {
+  .burger span {
+    background: var(--nav-link-colour);
+  }
+}
+
 .burger span:before, .burger span:after {
-  background: var(--nav-link-colour);
+  background: #fff;
   border-radius: 2px;
   content: '';
   display: block;
   height: 3px;
   position: absolute;
   width: 40px;
+}
+
+@media (min-width: 992px) {
+  .burger span:before, .burger span:after {
+    background: var(--nav-link-colour);
+  }
 }
 
 .burger span:before {
@@ -3724,7 +3736,7 @@ body {
           flex-direction: column;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   body {
     padding-top: var(--header-height);
   }

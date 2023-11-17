@@ -18,7 +18,7 @@
   <nav class="nav">
     <span class="nav__close js-close-nav"><span></span></span>
     <?php wp_nav_menu( array( 'menu' => 'main-menu', 'menu_class' => 'nav-list', 'container' => 'ul', )); ?>
-    <a href="#" title="Donate" class="btn site-header__donate btn--small js-book">Donate</a>    
+    <a href="<?php echo get_option('donate_link'); ?>" title="Donate" target="_blank" class="btn site-header__donate btn--small">Donate</a>    
   </nav>
   <div class="nav-mask"></div>
 </header>

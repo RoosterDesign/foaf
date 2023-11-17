@@ -240,7 +240,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  @include mq(tablet) {
+  @include mq(tablet-lg) {
     padding-top: var(--header-height);
   }
 

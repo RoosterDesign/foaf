@@ -13,7 +13,7 @@
   width: 100%;
   z-index: 99;
 
-  @include mq(tablet) {
+  @include mq(tablet-lg) {
     background: var(--header-bg);
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   }
@@ -96,20 +96,30 @@ body.home {
   }
 
   span {
-    background: var(--nav-link-colour);
+    background: #fff;
     border-radius: 2px;    
     height: 3px;    
     width: 40px;
 
+    @include mq(tablet-lg) {
+      background: var(--nav-link-colour);
+    }
+
     &:before,
     &:after {
-      background: var(--nav-link-colour);
+      background: #fff;
       border-radius: 2px;
       content: '';
       display: block;
       height: 3px;
       position: absolute;
       width: 40px;
+
+      @include mq(tablet-lg) {
+        background: var(--nav-link-colour);
+        
+      }
+
     }
 
     &:before { top: 0; }
@@ -129,6 +139,8 @@ body.home .burger {
   }
 
 }
+
+
 
 .site-header--sticky .burger span,
 .site-header--sticky .burger span:before,

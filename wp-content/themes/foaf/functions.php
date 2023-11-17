@@ -352,8 +352,14 @@ function awesome_page_create() {
 				update_option('masthead_card_image', $masthead_card_image);
 			}
 			$masthead_card_image = get_option('masthead_card_image', '');
-
-			
+						
+			//== Donate Link
+			if (isset($_POST['donate_link'])) {
+				$donate_link = stripslashes($_POST['donate_link']);
+				update_option('donate_link', $donate_link);
+			}
+			$donate_link = get_option('donate_link', '');
+						
 
 
 		?>
@@ -426,6 +432,18 @@ function awesome_page_create() {
 						<label for="masthead_card_image">Fallback Card Image</label><br>
 						<input type="text" name="masthead_card_image" id="masthead_card_image" value="<?php echo $masthead_card_image; ?>">
 					</div>
+
+					<hr />
+
+					<h2>Donate</h2>
+
+					<div class="settingsGroup">
+						<label for="donate_link">Donate Link</label><br>
+						<input type="text" name="donate_link" id="donate_link" value="<?php echo $donate_link; ?>">
+					</div>
+
+
+					
 
     			<input type="submit" value="Save" class="button button-primary button-large">
 			</form>
